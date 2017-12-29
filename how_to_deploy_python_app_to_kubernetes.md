@@ -230,8 +230,6 @@ Finally use kubectl to deploy the application to kubernetes:
   
 Yaay, Your application was successfully deployed to kubernetes.
 
-## Verification
-
 You can verify whether your application is running by inspecting the running services.
 
     kubectl get services
