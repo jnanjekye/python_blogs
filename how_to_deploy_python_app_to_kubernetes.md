@@ -1,4 +1,4 @@
-## Running a python Application on Kubernetes
+# Running a python Application on Kubernetes
 
 Kubernetes is an opensource platform that features deployment, maintenance and scaling mechanisms that help us simplify the 
 management of containerized python applications while giving us the portability, extensibility and self healing capabilities for 
@@ -14,7 +14,7 @@ include:
 + Working with Persistent Volume
 + Deploying the Python Application to kubernetes
 
-### Requirements
+## Requirements
 
 To seamlessly follow through, you will need the following:
 
@@ -44,8 +44,8 @@ kubectl is a command line interface for executing commands against a kubernetes 
 kubectl.
 
 **install_kubectl.sh**
-  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release
-  /release/stable.txt)/bin/linux/amd64/kubectl
+
+      curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 
 + Get the [source code](https://github.com/jnanjekye/k8s_python_sample_code/tree/master)
 
@@ -107,26 +107,23 @@ This is a docker file for our python application.
  
  ## Publishing the container images
  
- We can publish our python container image to different private/public cloud repositories like dockerhub,  AWS ECR, Google Container Registry,
- etc. For purposes of this tutorial, we shall use dockerhub.
+We can publish our python container image to different private/public cloud repositories like dockerhub,  AWS ECR, Google Container Registry,etc. For purposes of this tutorial, we shall use dockerhub.
  
- Before publising the image, we need to tag it to a version.
+Before publising the image, we need to tag it to a version.
  
      docker tag k8s_python_sample_code:latest k8s_python_sample_code:0.1
      
-  Once this is done, push the image to the cloud repository.
+ Once this is done, push the image to the cloud repository.
   
   **Push the image to cloud repository**
   
-  Using a docker registry other than dockerhub to store images requires you to add that container registry to the local docker 
-  daemon and kubernetes Docker daemons. You can look up this information for the different cloud registries. We shall use dockerhub in
-  this blog.
-  
-  Execute this docker command to push the image.
+ Using a docker registry other than dockerhub to store images requires you to add that container registry to the local docker daemon and kubernetes Docker daemons. You can look up this information for the different cloud registries. We shall us dockerhub in this blog.
+
+Execute this docker command to push the image.
   
       docker push k8s_python_sample_code
       
-  ## Persistent Storage
+## Persistent Storage
   
   Kubernetes supports many persistent storage like AWS EBC, CephFS, GlusterFS, Azure Disk, NFS, etc. I will cover kubernetes 
   persistence storage with cephfs.
@@ -135,39 +132,37 @@ This is a docker file for our python application.
   
   + persistent-volume.yml
   
-      ---
-    apiVersion: v1
-    kind: PersistentVolume
-    metadata:
-      name: app-disk1
-      namespace: k8s_python_sample_code
-    spec:
-      capacity:
-      storage: 50Gi
-      accessModes:
-      - ReadWriteMany
-      cephfs:
-      monitors:
-        - "172.17.0.1:6789"
-      user: admin
-      secretRef:
-        name: ceph-secret
-      readOnly: false
+        apiVersion: v1
+        kind: PersistentVolume
+        metadata:
+          name: app-disk1
+          namespace: k8s_python_sample_code
+        spec:
+          capacity:
+          storage: 50Gi
+          accessModes:
+          - ReadWriteMany
+          cephfs:
+          monitors:
+            - "172.17.0.1:6789"
+          user: admin
+          secretRef:
+            name: ceph-secret
+          readOnly: false
       
   + persistent_volume_claim.yaml
   
-      ---
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      name: appclaim1
-      namespace: k8s_python_sample_code
-    spec:
-      accessModes:
-      - ReadWriteMany
-      resources:
-      requests:
-        storage: 10Gi
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        metadata:
+          name: appclaim1
+          namespace: k8s_python_sample_code
+        spec:
+          accessModes:
+          - ReadWriteMany
+          resources:
+          requests:
+            storage: 10Gi
  
  We can now use kubetctl to add the persitent volume and claim to the kubernetes cluster.
  
