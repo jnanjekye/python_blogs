@@ -123,7 +123,7 @@ Execute this docker command to push the image.
   
       docker push k8s_python_sample_code
       
-## Persistent Storage
+## Working with Persistent Storage
   
   Kubernetes supports many persistent storage like AWS EBC, CephFS, GlusterFS, Azure Disk, NFS, etc. I will cover kubernetes 
   persistence storage with cephfs.
