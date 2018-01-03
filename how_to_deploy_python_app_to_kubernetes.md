@@ -1,12 +1,12 @@
 # Running a python Application on Kubernetes
 
 Kubernetes is an opensource platform that features deployment, maintenance and scaling mechanisms that help us simplify the 
-management of containerized python applications while giving us the portability, extensibility and self healing capabilities for 
-our applications. 
+management of containerized python applications while giving us the portability, extensibility and self healing capabilities for our applications. 
 
 Whether you want to run a simple python application or a complex one, kubernetes can quickly and efficiently help
 you deploy and scale your applications, seamlessly roll out new features while limiting resources to only required resources.
-In this blog, I will cover a holistic process of deploying a simple python application to kubernetes. Among the topics I will cover include:
+
+In this blog, I will cover a holistic process of deploying a simple python application to kubernetes. This is one of the ways to deploy a python application to kubernetes. Among the topics I will cover include:
 
 + Creating python container images
 + Publishing the container images to an image registry
@@ -19,11 +19,9 @@ To seamlessly follow through, you will need the following:
 
 + docker
 
-Docker is an open platform to build and ship distributed applications. To install docker on Debian/Ubuntu:
-
-    sudo apt-get install docker.io
+Docker is an open platform to build and ship distributed applications. To install docker, quickly follow through the [official documentation](https://docs.docker.com/engine/installation/).
     
-Verify that docker now runs:
+Verify that docker runs your system:
 
     $ docker info
     Containers: 0
@@ -123,7 +121,7 @@ Execute this docker command to push the image.
   
       docker push k8s_python_sample_code
       
-## Working with Persistent Storage
+## Working with CephFS Persistent Storage
   
   Kubernetes supports many persistent storage like AWS EBC, CephFS, GlusterFS, Azure Disk, NFS, etc. I will cover kubernetes 
   persistence storage with cephfs.
