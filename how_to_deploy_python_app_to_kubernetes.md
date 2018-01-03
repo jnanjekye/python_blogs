@@ -17,7 +17,7 @@ In this blog, I will cover a holistic process of deploying a simple python appli
 
 To seamlessly follow through, you will need the following:
 
-+ docker
++ Docker
 
 Docker is an open platform to build and ship distributed applications. To install docker, quickly follow through the [official documentation](https://docs.docker.com/engine/installation/).
     
@@ -35,7 +35,7 @@ Verify that docker runs your system:
     WARNING: No memory limit support
     WARNING: No swap limit support
 
-+ kubectl
++ Kubectl
 
 kubectl is a command line interface for executing commands against a kubernetes cluster. Run the shell script below to install 
 kubectl.
@@ -234,5 +234,9 @@ You can verify whether your application is running by inspecting the running ser
 
 May kubernetes set you free from deployment hustles!!!
 
-You can checkout my recent book on [python 2 and 3 Compatibility](https://www.amazon.com/Python-Compatibility-Six-Python-Future-Libraries/dp/1484229541) by Apress for my other content.
+**About the Author**
+
+Joannah Nanjekye is from Uganda, a software engineer, conference speaker and a proud FOSS (Free and Open Source Software) contributor who presented at PyCon ZA in South Africa in 2016 and 2017. She shares her knowledge on implementation for Python 2 and 3 support from experiences on her work on open source projects. She worked as a software developer for Laboremus Uganda and Fintech Uganda before pursuing a career as an Aeronautical Engineer with a bias in Avionics at Kenya Aeronautical College. She is a proud Rails Girls Summer of Code alumnae and was mentored into FOSS development during her time as a scholar.
+
+Learn more about Python from the author’s recent book, [Python 2 and 3 Compatibility](https://www.apress.com/gp/book/9781484229545). Get your copy today and discover clean ways to write code that will run on both Python 2 and 3, including detailed examples of how to convert existing Python 2-compatible code to code that will run reliably on both Python 2 and 3.
 
