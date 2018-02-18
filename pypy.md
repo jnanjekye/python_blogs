@@ -1,15 +1,8 @@
-Title: Faster python programs with pypy by Joannah Nanjekye
-Date: 2017-03-06 18:11:00
-Tags: pypy, python
-Slug: pypy_by_joannah_nanjekye
-Author: Joannah Nanjekye
-Summary: A summary of the presentation on pypy Joannah Nanjekye gave.
-email: nanjekyejoannah@gmail.com
-about_author: <p> Software Engineer,  Aeronautical Engineer to be, Straight Outta 256 , I choose Results over Reasons, Passionate Aviator, Show me the code</p><p>I share my thoughts majorly here <a href="https://nanjekyejoannah.github.io/" target="_blank">https://nanjekyejoannah.github.io/</a></p>
+# Implement Faster python programs with pypy
 
 Pypy is an alternate implementation of the python programming language. Pypy started  out as a python interpreter written in python. It is aimed at being compatible with cpython and currently with experimental compatibility for CPython C API extensions.
 
-Pypy originally refered to two things. one the python interpreter and Rpython Translation toolchain but currently pypy is always used torefer to the python interpreter. The translation framework is always refered to as the Rpython Translation Framework.
+Pypy originally refered to two things. one the python interpreter and Rpython Translation toolchain but currently pypy is always used to refer to the python interpreter. The translation framework is always refered to as the Rpython Translation Framework.
 
 It is the distinct features embedded in pypy that give your python programs the magical performance. Lets have a look at some of them.
 
@@ -85,7 +78,7 @@ Lets take a look at pypy and a reference python implementation called cpython.
 <img src="https://github.com/nanjekyejoannah/pynbo-blog/blob/jumbojet/content/img/pypy-vs_cpython.png">
 
 
-# Way Forward
+# Getting started with pypy
 
 “If you want your code to run faster, you should probably just use PyPy.” — Guido van Rossum (creator of Python)
 
@@ -104,6 +97,7 @@ It is easy to install
 <p> Windows </p>
 
 There is rich [Documentation](http://pypy.org/download.html) on installation for windows.
+
 
 
 # Check these out for more pypy inspiration
